@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
+  title: 'Bookit',
+  tagline: 'Study bookshelf for yourself',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -11,29 +11,71 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Bookit',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
       },
       items: [
+        //{to: 'blog', label: 'Blog', position: 'left'},
         {
+          href: 'https://github.com/mizuti69/bookit',
+          label: 'GitHub',
+          position: 'right',
+        },
+        /*{
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        },*/
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          label: 'Infra',
+          position: 'left',
+          items: [
+            {
+              label: 'RedhatEL/CentOS8',
+              to: '/docs/infra/el8',
+            },
+            {
+              label: 'RedhatEL/CentOS7',
+              to: '/docs/infra/el7',
+            },
+          ],
+        },
+        {
+          label: 'Code/Soft',
+          position: 'left',
+          items: [
+            {
+              label: 'Ansible',
+              to: '/docs/code/ansible',
+            },
+            {
+              label: 'AWS CDK',
+              to: '/docs/code/aws_cdk',
+            },
+          ],
+        },
+        {
+          label: 'IoT/MiCon',
+          position: 'left',
+          items: [
+            {
+              label: 'RaspberryPi',
+              to: '/docs/iot/raspberrypi',
+            },
+            {
+              label: 'Arduino',
+              to: '/docs/iot/arduino',
+            },
+          ],
         },
       ],
     },
     footer: {
       style: 'dark',
-      links: [
+      /*links: [
         {
           title: 'Docs',
           items: [
@@ -74,6 +116,7 @@ module.exports = {
           ],
         },
       ],
+      */
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   },

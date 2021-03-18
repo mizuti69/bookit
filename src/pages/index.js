@@ -65,7 +65,7 @@ export default function Home() {
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
+          {/* <div className={styles.buttons}>
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',
@@ -74,10 +74,10 @@ export default function Home() {
               to={useBaseUrl('docs/')}>
               Get Started
             </Link>
-          </div>
+            </div> */}
         </div>
       </header>
-      <main>
+      {/* <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
@@ -89,7 +89,7 @@ export default function Home() {
             </div>
           </section>
         )}
-      </main>
+      </main>*/}
     </Layout>
   );
 }
