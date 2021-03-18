@@ -7,8 +7,8 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'mizuti69', // Usually your GitHub org/user name.
+  projectName: 'bookit', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Bookit',
@@ -35,11 +35,11 @@ module.exports = {
           items: [
             {
               label: 'RedhatEL/CentOS8',
-              to: '/docs/infra/el8',
+              to: '/docs_infra/el8/index',
             },
             {
               label: 'RedhatEL/CentOS7',
-              to: '/docs/infra/el7',
+              to: '/docs_infra/el7/index',
             },
           ],
         },
@@ -49,11 +49,11 @@ module.exports = {
           items: [
             {
               label: 'Ansible',
-              to: '/docs/code/ansible',
+              to: '/docs_code/ansible',
             },
             {
               label: 'AWS CDK',
-              to: '/docs/code/aws_cdk',
+              to: '/docs_code/aws_cdk',
             },
           ],
         },
@@ -63,11 +63,11 @@ module.exports = {
           items: [
             {
               label: 'RaspberryPi',
-              to: '/docs/iot/raspberrypi',
+              to: '/docs_iot/raspberrypi/index',
             },
             {
               label: 'Arduino',
-              to: '/docs/iot/arduino',
+              to: '/docs_iot/arduino/index',
             },
           ],
         },
@@ -124,12 +124,14 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        /*
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/mizuti69/bookit/edit/master',
         },
+        */
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
@@ -142,4 +144,24 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'infra',
+        path: 'docs_infra',
+        routeBasePath: 'docs_infra',
+        sidebarPath: require.resolve('./sidebarsInfra.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iot',
+        path: 'docs_iot',
+        routeBasePath: 'docs_iot',
+        sidebarPath: require.resolve('./sidebarsIot.js'),
+      },
+    ],
+  ]
 };

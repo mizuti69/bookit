@@ -6,6 +6,8 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url(https://use.fontawesome.com/releases/v5.9.0/css/all.css);
+
 :root {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: rgb(33, 175, 144);
