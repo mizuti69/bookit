@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Bookit',
   tagline: 'Study bookshelf for yourself',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://bookit-update.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -163,5 +163,10 @@ module.exports = {
         sidebarPath: require.resolve('./sidebarsIot.js'),
       },
     ],
-  ]
+    /*
+    [
+      '@docusaurus/plugin-ideal-image',
+    ],
+    */
+  ],
 };
