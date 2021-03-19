@@ -43,6 +43,7 @@ module.exports = {
             },
           ],
         },
+        /*
         {
           label: 'Code/Soft',
           position: 'left',
@@ -57,6 +58,7 @@ module.exports = {
             },
           ],
         },
+        */
         {
           label: 'IoT/MiCon',
           position: 'left',
