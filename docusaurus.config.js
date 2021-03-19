@@ -34,11 +34,11 @@ module.exports = {
           position: 'left',
           items: [
             {
-              label: 'RedhatEL/CentOS8',
-              to: '/docs_infra/el8/index',
+              label: 'RedhatEL/CentOS8 セットアップ',
+              to: '/docs_infra/el8/introduction',
             },
             {
-              label: 'RedhatEL/CentOS7',
+              label: 'RedhatEL/CentOS7 セットアップ',
               to: '/docs_infra/el7/index',
             },
           ],
@@ -142,6 +142,11 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
         },
       },
     ],
