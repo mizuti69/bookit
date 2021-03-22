@@ -41,6 +41,14 @@ module.exports = {
               label: 'RedhatEL/CentOS7 セットアップ',
               to: '/docs_infra/el7/index',
             },
+            {
+              label: 'SMTPサーバ セットアップ',
+              to: '/docs_infra/smtp/postfix',
+            },
+            {
+              label: 'その他',
+              to: '/docs_infra/others/fsecure',
+            },
           ],
         },
         /*

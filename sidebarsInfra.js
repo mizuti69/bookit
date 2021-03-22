@@ -51,9 +51,43 @@ module.exports = {
       },
       {
         type: 'category',
+        label: 'ユーザー設定',
+        items: [
+          'el8/user',
+          'el8/user_policy',
+          'el8/user_create',
+          'el8/user_chage',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'セキュリティ設定',
+        items: [
+          'el8/security_user',
+          'el8/security_service',
+          'el8/security_firewall',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'SSH設定',
+        items: [
+          'el8/ssh',
+          'el8/ssh_auth',
+          'el8/ssh_sftp',
+        ],
+      },
+      'el8/timedata',
+      'el8/update',
+      {
+        type: 'category',
         label: 'Tips',
         items: [
           'el8/rsyslog',
+          'el8/tools',
+          'el8/sysstat',
+          'el8/audit',
+          'el8/nfs',
         ],
       },
     ],
@@ -61,6 +95,20 @@ module.exports = {
   el7: {
     "RedhatEL7/CentOS7 セットアップ": [
       'el7/index',
+    ],
+  },
+  smtp: {
+    "Postfix セットアップ": [
+      'smtp/postfix',
+      'smtp/postfix_server',
+      'smtp/postfix_client',
+      'smtp/postfix_transport',
+      'smtp/postfix_blacklist',
+    ],
+  },
+  tools: {
+    "Fsecure CLE Linux": [
+      'others/fsecure',
     ],
   },
 };
