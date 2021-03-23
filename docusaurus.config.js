@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
   organizationName: 'mizuti69', // Usually your GitHub org/user name.
   projectName: 'bookit', // Usually your repo name.
   themeConfig: {
