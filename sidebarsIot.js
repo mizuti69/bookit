@@ -25,7 +25,11 @@ module.exports = {
         type: 'category',
         label: 'ELEGOO Arduino Lesson',
         items: [
+          "arduino/introduction",
           "arduino/lesson1",
+          "arduino/lesson2",
+          "arduino/lesson3",
+          "arduino/lesson4",
         ],
       },
     ], 
