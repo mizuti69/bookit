@@ -1,20 +1,4 @@
 module.exports = {
-  /*
-  docs: [
-    {
-      type: 'category',
-      label: 'Docusaurus Tutorial',
-      items: [
-        'getting-started',
-        'create-a-page',
-        'create-a-document',
-        'create-a-blog-post',
-        'markdown-features',
-        'thank-you',
-      ],
-    },    
-  ],
-  */
   iot: {
     "Raspberry Pi": [
       'raspberrypi/index',
@@ -37,6 +21,10 @@ module.exports = {
           "arduino/lesson9",
           "arduino/lesson10",
           "arduino/lesson11",
+          "arduino/lesson12",
+          "arduino/lesson13",
+          "arduino/lesson14",
+          "arduino/lesson15",
         ],
       },
     ], 
