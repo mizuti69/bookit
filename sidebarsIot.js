@@ -27,6 +27,7 @@ module.exports = {
           "arduino/lesson15",
           "arduino/lesson16",
           "arduino/lesson17",
+          "arduino/lesson18",
         ],
       },
     ], 
