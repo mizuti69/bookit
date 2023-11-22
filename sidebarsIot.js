@@ -1,8 +1,5 @@
 module.exports = {
-  iot: {
-    "Raspberry Pi": [
-      'raspberrypi/index',
-    ],
+  arduino: {
     "Arduino": [
       'arduino/index',
       {
@@ -32,5 +29,10 @@ module.exports = {
         ],
       },
     ], 
+  },
+  raspberrypi: {
+    "Raspberry Pi": [
+      'raspberrypi/index',
+    ],
   },
 };

@@ -1,4 +1,70 @@
 module.exports = {
+  el9: {
+    "RedhatEL9/CentOSS9セットアップ": [
+      'el9/introduction',
+      'el9/install',
+      {
+        type: 'category',
+        label: 'ネットワーク設定',
+        items: [
+          'el9/network_nic',
+          'el9/network_hostname',
+          'el9/network_security',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'OS基本設定',
+        items: [
+          'el9/selinux',
+          'el9/systemd',
+          'el9/locale',
+          'el9/clock',
+          'el9/cron',
+          'el9/logrotate',
+          'el9/ops',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'ユーザー設定',
+        items: [
+          'el9/user',
+          'el9/user_policy',
+          'el9/user_create',
+          'el9/user_chage',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'セキュリティ設定',
+        items: [
+          'el9/security_user',
+          'el9/security_firewall',
+          'el9/audit',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'SSH設定',
+        items: [
+          'el9/ssh',
+          'el9/ssh_auth',
+          'el9/ssh_sftp',
+        ],
+      },
+      'el9/timedata',
+      'el9/update',
+      {
+        type: 'category',
+        label: 'Tips',
+        items: [
+          'el9/tools',
+          'el9/sysstat',
+        ],
+      },
+    ],
+  },
   el8: {
     "RedhatEL8/CentOS8セットアップ": [
       'el8/introduction',
@@ -79,14 +145,6 @@ module.exports = {
   el7: {
     "RedhatEL7/CentOS7 セットアップ": [
       'el7/introduction',
-      {
-        type: 'category',
-        label: 'OSインストール',
-        items: [
-          'el8/install',
-          'el8/subscribe',
-        ],
-      },
     ],
   },
   smtp: {

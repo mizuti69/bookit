@@ -34,12 +34,16 @@ module.exports = {
           position: 'left',
           items: [
             {
+              label: 'RedhatEL/CentOSS9 セットアップ',
+              to: '/docs_infra/el9/introduction',
+            },
+            {
               label: 'RedhatEL/CentOS8 セットアップ',
               to: '/docs_infra/el8/introduction',
             },
             {
               label: 'RedhatEL/CentOS7 セットアップ',
-              to: '/docs_infra/el7/index',
+              to: '/docs_infra/el7/introduction',
             },
             {
               label: 'SMTPサーバ セットアップ',
@@ -51,33 +55,27 @@ module.exports = {
             },
           ],
         },
-        /*
         {
-          label: 'Code/Soft',
+          label: 'SaaS',
           position: 'left',
           items: [
             {
-              label: 'Ansible',
-              to: '/docs_code/ansible',
-            },
-            {
-              label: 'AWS CDK',
-              to: '/docs_code/aws_cdk',
+              label: 'AWS',
+              to: '/docs_saas/aws/',
             },
           ],
         },
-        */
         {
           label: 'IoT/MiCon',
           position: 'left',
           items: [
             {
               label: 'RaspberryPi',
-              to: '/docs_iot/raspberrypi/index',
+              to: '/docs_iot/raspberrypi/',
             },
             {
               label: 'Arduino',
-              to: '/docs_iot/arduino/index',
+              to: '/docs_iot/arduino/',
             },
           ],
         },
@@ -167,6 +165,15 @@ module.exports = {
         path: 'docs_infra',
         routeBasePath: 'docs_infra',
         sidebarPath: require.resolve('./sidebarsInfra.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'saas',
+        path: 'docs_saas',
+        routeBasePath: 'docs_saas',
+        sidebarPath: require.resolve('./sidebarsAws.js'),
       },
     ],
     [
