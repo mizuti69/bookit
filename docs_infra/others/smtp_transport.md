@@ -57,15 +57,15 @@ allow_min_user = yes
 
 | ヘッダー例 | 備考 |
 |:-------------|:--------|
-| RCPT TO: <.user@domain.name> | 頭に "." |
-| PT TO: <user.@domain.name> | ユーザ名末尾が "." |
-| RCPT TO: <user..name@domain.name> | "."が連続している |
-| RCPT To: Hogemoge Taro <taro@domain.name> | ヘッダのTo:を丸ごとコピー。sendmailは これでも動いてしまう |
-| RCPT TO: <hogemoge taro@domain.name> | 空白をクオートしていない。  サーバによって解釈が異なるので危険 |
-| RCPT TO: <user@.domain.name> | ドメイン頭に"." |
-| RCPT TO: <@domain.name> | ユーザ名が空。  PostfixではMAILER-DAEMONに配送 |
-| MAIL FROM: <まぁまぁｗｗ@domain.name> | 8bit文字。UTF-8もダメ。 クオートしてもダメ。 |
-| MAIL FROM: <#@[]> | qmail の doublebounce。 []は空のIPアドレス |
+| RCPT TO: `<.user@domain.name>` | 頭に "." |
+| PT TO: `<user.@domain.name>` | ユーザ名末尾が "." |
+| RCPT TO: `<user..name@domain.name>` | "."が連続している |
+| RCPT To: Hogemoge Taro `<taro@domain.name>` | ヘッダのTo:を丸ごとコピー。sendmailは これでも動いてしまう |
+| RCPT TO: `<hogemoge taro@domain.name>` | 空白をクオートしていない。  サーバによって解釈が異なるので危険 |
+| RCPT TO: `<user@.domain.name>` | ドメイン頭に"." |
+| RCPT TO: `<@domain.name>` | ユーザ名が空。  PostfixではMAILER-DAEMONに配送 |
+| MAIL FROM: `<まぁまぁｗｗ@domain.name>` | 8bit文字。UTF-8もダメ。 クオートしてもダメ。 |
+| MAIL FROM: `<#@[]>` | qmail の doublebounce。 []は空のIPアドレス |
 
 RFCチェックを無効化する場合  
 
