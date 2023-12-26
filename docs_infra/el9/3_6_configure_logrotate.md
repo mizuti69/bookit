@@ -47,7 +47,7 @@ Description=Daily rotation of log files
 Documentation=man:logrotate(8) man:logrotate.conf(5)
 
 [Timer]
-OnCalendar=*-*-* 5:00:00
+OnCalendar=*-*-* 0:00:00
 AccuracySec=10m
 Persistent=true
 
@@ -55,7 +55,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-`OnCalendar`を任意の時間帯（例は毎日５時）に設定し、`AccuracySec`も10分程度のラグにしておく  
+`OnCalendar`を任意の時間帯（例は毎日0時）に設定し、`AccuracySec`も10分程度のラグにしておく  
 
 設定の反映  
 
@@ -64,7 +64,7 @@ WantedBy=timers.target
 
 # systemctl list-timers
 NEXT                        LEFT          LAST                        PASSED       UNIT                         ACTIVAT>
-Fri 2023-10-27 05:00:00 JST 12h left      Thu 2023-10-26 13:56:33 JST 2h 17min ago logrotate.timer              logrota>
+Fri 2023-10-27 00:00:00 JST 12h left      Thu 2023-10-26 13:56:33 JST 2h 17min ago logrotate.timer              logrota>
 ```
 
 :::warning 注意

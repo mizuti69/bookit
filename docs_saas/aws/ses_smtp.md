@@ -1,5 +1,5 @@
 ---
-id: eventbridge_ec2stop
+id: ses_smtp
 title: "EC2 の定期的な自動停止設定"
 ---
 import { LinkTag } from '../basecomponent.jsx';

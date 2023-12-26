@@ -17,7 +17,7 @@ Sekinuxには３つのモードがある
 * SELinux の無効化  
   SELinux ポリシーはまったく読み込まれないので強制されることもなく、AVC メッセージもログ記録されません。  
 
-:::caution
+:::caution 注意
 Red Hat では、SELinux を永続的に無効にするのではなく、permissive モードで使用することを強く推奨しています。  
 :::
 
