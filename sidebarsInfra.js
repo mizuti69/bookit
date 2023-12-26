@@ -23,6 +23,7 @@ module.exports = {
           'el9/cron',
           'el9/logrotate',
           'el9/ops',
+          'el9/journal_log',
         ],
       },
       {
@@ -142,11 +143,13 @@ module.exports = {
       },
     ],
   },
+  /*
   el7: {
     "RedhatEL7/CentOS7 セットアップ": [
       'el7/introduction',
     ],
   },
+  */
   others: {
     "その他": [
       {

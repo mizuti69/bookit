@@ -41,10 +41,12 @@ module.exports = {
               label: 'RedhatEL/CentOS8 セットアップ',
               to: '/docs_infra/el8/introduction',
             },
+            /*
             {
               label: 'RedhatEL/CentOS7 セットアップ',
               to: '/docs_infra/el7/introduction',
             },
+            */
             {
               label: 'その他',
               to: '/docs_infra/others/fsecure',
@@ -145,11 +147,15 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        /*
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
           trailingSlash: false,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
+        */
       },
     ],
   ],
@@ -187,4 +193,14 @@ module.exports = {
     ],
     */
   ],
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja'],
+    localeConfigs: {
+      ja: {
+        label: '日本語',
+        direction: 'ltr',
+      },
+    },
+  },
 };
