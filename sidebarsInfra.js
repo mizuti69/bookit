@@ -147,18 +147,40 @@ module.exports = {
       'el7/introduction',
     ],
   },
-  smtp: {
-    "Postfix セットアップ": [
-      'smtp/postfix',
-      'smtp/postfix_server',
-      'smtp/postfix_client',
-      'smtp/postfix_transport',
-      'smtp/postfix_blacklist',
-    ],
-  },
-  tools: {
-    "Fsecure CLE Linux": [
-      'others/fsecure',
+  others: {
+    "その他": [
+      {
+        type: 'category',
+        label: 'HTTPD',
+        items: [
+          'others/apache24',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'SMTPサーバ',
+        items: [
+          'others/postfix',
+          'others/postfix_server',
+          'others/postfix_client',
+          'others/postfix_transport',
+          'others/postfix_blacklist',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'MySQL',
+        items: [
+          'others/mysql',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Fsecure',
+        items: [
+          'others/fsecure',
+        ],
+      },
     ],
   },
 };

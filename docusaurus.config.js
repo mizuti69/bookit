@@ -46,10 +46,6 @@ module.exports = {
               to: '/docs_infra/el7/introduction',
             },
             {
-              label: 'SMTPサーバ セットアップ',
-              to: '/docs_infra/smtp/postfix',
-            },
-            {
               label: 'その他',
               to: '/docs_infra/others/fsecure',
             },
