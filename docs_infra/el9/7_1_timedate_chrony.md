@@ -19,8 +19,7 @@ ntpdはPKIシステムの活用も可能なAutokey認証プロトコルもサポ
 上記のように用途に分けて利用を決定する  
 基本的には従来の NTPD のように設定する事が可能  
 
-<LinkTag url="https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/configuring-time-synchronization_configuring-basic-system-settings#assembly_overview-of-network-time-security-in-chrony_configuring-time-synchronization">時刻同期の設定
-</LinkTag>  
+<LinkTag url="https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/configuring-time-synchronization_configuring-basic-system-settings#assembly_overview-of-network-time-security-in-chrony_configuring-time-synchronization">時刻同期の設定</LinkTag>  
 
 ## インストール  
 

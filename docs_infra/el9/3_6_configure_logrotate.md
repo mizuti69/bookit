@@ -67,6 +67,11 @@ NEXT                        LEFT          LAST                        PASSED    
 Fri 2023-10-27 05:00:00 JST 12h left      Thu 2023-10-26 13:56:33 JST 2h 17min ago logrotate.timer              logrota>
 ```
 
+:::warning 注意
+systemd-timer は cron の代替であるため、デフォルトでは1日に1回しかローテート処理を行わないということになる  
+logrotate.conf 等でいくら時間単位のローテート設定を定義しても処理が行われる timer が daily では意味がないため、timer の設定は 最短のローテート頻度設定に基づいて定義する必要がある？  
+:::
+
 ## サービス毎のログローテート設定
 システムに関するログはデフォルトでローテートされるよう設定されているが不要なものもあるので修正する  
 

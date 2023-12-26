@@ -20,7 +20,7 @@ import { LinkTag } from './basecomponent.jsx';
   apache のログをリアルタイムでTOPのように見せてくれる  
   リリース時やアクセス状況をリアルタイムで見たい時に便利  
 
-* telnet  
+* net-tools  
   ネットワーク上の問題を調査する時にやっぱりあるといい  
 
 * postfix-perl-scripts  
