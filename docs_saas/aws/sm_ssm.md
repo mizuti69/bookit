@@ -212,6 +212,16 @@ rootを指定することはできない。
 用途や環境のセキュリティレベルによるが、ec2-user同様、AWSがデフォルトで利用するユーザーから変更することはあまりしないほうが良い印象  
 任意のOSアカウントを採用する場合は権限管理やトラブル時に原因切り分けが行えるような設計をする  
 
+指定したい場合、SSMの設定画面から  
+<img src={require('./assets/sm_ssm09.png').default} width="90%"/>
+
+Run As を有効化し、
+ユーザー名を指定した場合：IAMユーザーに「SSMSessionRunAs」タグがない場合に指定したユーザーでログインが行われます  
+ユーザー名を指定しない場合：IAMユーザーに「SSMSessionRunAs」タグがない場合終了します  
+
+デフォルトの ssm-user を使用してほしくない場合は空欄にしたほうが良さそう  
+SSMを利用するIAMユーザーにタグを追加して完了  
+
 ### セッションマネージャー経由でのSSH/SCP許可  
 <LinkTag url="https://docs.aws.amazon.com/ja_jp/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html">Session Manager を通して SSH 接続のアクセス許可を有効にして制御する</LinkTag>  
 
@@ -263,7 +273,7 @@ EC2の接続画面から接続できることを確認
 ローカルPCからCLIで接続できることを確認  
 
 ```
-> aws ssm start-session --target <instance id> --profile jsc-dev
+> aws ssm start-session --target <instance id> --profile develop
 
 Starting session with SessionId: <instance id>
 sh-5.1$

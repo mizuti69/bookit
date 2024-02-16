@@ -11,6 +11,13 @@ module.exports = {
       },
       {
         type: 'category',
+        label: 'CloudWatch',
+        items: [
+          "aws/cloudwatch_collectd",
+        ],
+      },
+      {
+        type: 'category',
         label: 'EventBridge',
         items: [
           "aws/eventbridge_ec2stop",
