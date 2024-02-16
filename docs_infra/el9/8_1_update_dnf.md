@@ -101,7 +101,3 @@ Unit=dnf-makecache.service
 # systemctl enable dnf-automatic.timer
 # systemctl start dnf-automatic.timer
 ```
-
-:::tip memo
-※dnf-automatic.serviceもあるけど何か違うのか？  
-:::

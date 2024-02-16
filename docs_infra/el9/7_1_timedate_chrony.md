@@ -49,7 +49,7 @@ System clock synchronized: yes
 
 ```
 # vim /etc/chrony.conf
-pool {ntp server ip} iburst
+server {ntp server ip} prefer iburst minpoll 4 maxpoll 4
 ```
 
 `iburst` オプションは付いた NTP サーバに対して、起動直後に短い間隔で4回問い合わせをする（ ntpd の iburst は8回）  
