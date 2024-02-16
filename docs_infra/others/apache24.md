@@ -1,6 +1,6 @@
 ---
 id: apache24
-title: "Apache 2.4のインストールと基本設定"
+title: "Apache24 の基本設定"
 ---
 import { LinkTag } from './basecomponent.jsx';
 
@@ -266,6 +266,14 @@ apache2.4 以降は event がデフォルトに採用されていて特に理由
 > max_connections = (ThreadsPerChild + (AsyncRequestWorkerFactor * idle_workers)) * ServerLimit
 > max_connections = (AsyncRequestWorkerFactor + 1) * MaxRequestWorkers
 
+
+ServerLimit = MaxRequestWorkers / ThreadsPerChild  
+AsyncRequestWorkerFactor = 2(default)
+
+なので、最大で考えた場合の同時接続数は  
+
+(ThreadsPerChild[25]+(AsyncRequestWorkerFactor[2] * MaxSpareThreads[75])) * ServerLimit[6] = 1050  
+
 ## ログ管理
 Apacheのログはデフォルトで `logs/access.log`、`logs/error.log` に出力されるようになっているが、VirtualHostなどでサイトごとに細分化したりローテート処理を行おうと思うと og 出力処理はサーバプロセスと紐づけられているため少し手間が必要になっている  
 
@@ -307,3 +315,89 @@ CustomLog "|/usr/sbin/rotatelogs -l -n 4 logs/access_log 86400 540" combined
 EPELリポジトリで提供されているログローテートツール  
 rotatelogsと違い、ログ保存先のディレクトリ作成まで行え、 `/%Y/%m/access.log.%d` のような詳細なログ管理を定義できる  
 ただし世代管理は行えないため別途仕組みが必要  
+
+## VirtualHost
+複数のサイト、ドメインを一つのApache上で管理運用したい場合には VirtualHost を利用して管理定義できる  
+たとえひとつのサイトしか運用しない場合でも運用性や設定ファイルの管理性、将来の拡張性を考え VirtualHost を利用したほうがいい  
+
+### VirtualHost 側で管理定義するべきもの
+サイト固有の定義は基本的に VirtualHost 側で管理定義する  
+
+```
+<VirtualHost *:18443>
+  ServerName www.com
+  DocumentRoot /var/www/html
+
+  ## セッションタイムに関する定義
+  Timeout 60
+  KeepAlive On
+  MaxKeepAliveRequests 100
+  KeepAliveTimeout 60
+
+  ## エラーページ定義
+  ErrorDocument 403 /index.php
+  ErrorDocument 404 /index.php
+  ErrorDocument 500 /sorry/index.html
+  ErrorDocument 503 /sorry/index.html
+
+  ## ログをサイト個別で出せるよう定義
+  CustomLog "logs/www.access.log" combined
+  ErrorLog  "logs/www.error.log"
+
+  ## ディレクティブへのアクセスはサイト単位で定義
+  <Directory /var/www/html>
+    Options -Indexes -MultiViews +IncludesNOEXEC
+    AllowOverride ALL
+    #Require all granted
+  </Directory>
+
+  ## リダイレクト定義なんかもサイト単位で管理
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} ^OPTIONS
+  RewriteRule .* - [F]
+
+</VirtualHost>
+```
+
+## その他
+
+### ダイジェスト認証
+ダイジェスト認証設定  
+
+```
+  <Location />
+    AuthUserFile /etc/httpd/sec/.htpasswd
+    AuthName "Authentication"
+    AuthType Digest
+    <RequireAny>
+      Require valid-user
+      Require ip 127.0.0.1
+      Require env loadbalancer
+    </RequireAny>
+  </Location>
+```
+
+認証情報作成  
+
+```
+# htdigest -c /etc/httpd/sec/.htpasswd "Authentication" develop
+Adding password for basictoto in realm Authentication.
+New password:
+Re-type new password:
+```
+
+### カスタムホスト設定
+冗長化されたサーバ環境で、Webアクセスしたときに今どのホストにアクセスしているか確認しながら出来るようにするためのカスタムヘッダー定義  
+
+```
+  SetEnvif Server_Addr "([0-9]{1,3}$)" SERVER_ID=$1
+  Header add X-IDADD "%{ENV:SERVER_ID}s"
+```
+
+### ロードバランサー配下などSSLラッパー配下の場合
+SSLラッパーは以下にApacheを稼働させる場合、特別な理由がなければApacheは HTTTP でアクセスを受け付ける  
+その場合配下のアプリケーションから見てアクセスが HTTP アクセスとみなされて困る場合があるため、Apache側で明示的に HTTPS アクセスと認識させる  
+
+```
+  SetEnv HTTPS on
+```

@@ -157,6 +157,7 @@ module.exports = {
         label: 'HTTPD',
         items: [
           'others/apache24',
+          'others/apache24_php',
         ],
       },
       {
